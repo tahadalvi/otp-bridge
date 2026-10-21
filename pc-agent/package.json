@@ -1,0 +1,12 @@
+{
+  "name": "otp-pc-agent",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Writes relayed OTPs to a local JSON file. Zero dependencies by design.",
+  "scripts": {
+    "test": "node --test",
+    "start": "node src/index.js"
+  },
+  "dependencies": {}
+}

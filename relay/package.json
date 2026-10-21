@@ -1,0 +1,12 @@
+{
+  "name": "otp-relay",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "OTP relay. Zero dependencies by design.",
+  "scripts": {
+    "test": "node --test",
+    "start": "node src/index.js"
+  },
+  "dependencies": {}
+}

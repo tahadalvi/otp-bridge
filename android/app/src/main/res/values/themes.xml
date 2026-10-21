@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  A local theme rather than Theme.Material3.* from Material Components: the UI is
+  entirely Compose, so the activity theme only needs to supply a sane window
+  background and no action bar. This avoids pulling in com.google.android.material
+  just for a style reference.
+-->
+<resources>
+    <style name="Theme.OtpBridge" parent="android:Theme.Material.Light.NoActionBar" />
+</resources>

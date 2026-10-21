@@ -1,0 +1,28 @@
+# Secrets — never commit tokens
+.env
+config.json
+**/config.json
+!**/config.example.json
+
+# IDE
+.idea/
+
+# Android
+android/local.properties
+android/keystore.properties
+android/.gradle/
+android/build/
+android/app/build/
+android/.idea/
+android/captures/
+*.apk
+*.aab
+*.keystore
+*.jks
+
+# Node
+node_modules/
+
+# OS
+Thumbs.db
+desktop.ini

@@ -1,0 +1,30 @@
+[Unit]
+Description=otp-relay — SMS OTP courier for the OTP Bridge
+After=network-online.target tailscaled.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/otp-relay
+EnvironmentFile=/home/ubuntu/otp-relay/.env
+ExecStart=/usr/bin/env node src/index.js
+Restart=always
+RestartSec=3
+
+# This service holds OTP codes in memory. Keep it boxed in.
+# Note: MemoryDenyWriteExecute is deliberately NOT set — it blocks V8's JIT
+# from mapping writable-executable pages and Node will not start under it.
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+# ProtectHome makes everything under /home read-only, so the one directory the
+# service legitimately writes to — published APKs — has to be carved back out.
+ReadWritePaths=/home/ubuntu/otp-relay/updates /home/ubuntu/otp-relay/state
+ProtectKernelTunables=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+
+[Install]
+WantedBy=multi-user.target

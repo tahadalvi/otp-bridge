@@ -1,0 +1,6 @@
+{
+  "streamUrl": "http://10.0.0.2:8790/otp/stream",
+  "ackUrlTemplate": "http://10.0.0.2:8790/otp/{id}/ack",
+  "pcToken": "replace-me-read-only-token",
+  "targetPath": "C:/otp-bridge/latest.json"
+}
